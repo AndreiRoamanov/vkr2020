@@ -39,7 +39,6 @@ def funcfor5(z, mod, temp): # эта функция должна выдават�
                 bnz1 = bnz1 // 10
             pol1 = znpol[dz1]
             len1 = znlen[dz1]
-#            print("dz1 = ", dz1 ,", pol1 = ", pol1)
             bnz2 = nz2
             dz2 = 0
             rk = 0
@@ -64,7 +63,7 @@ def funcfor5(z, mod, temp): # эта функция должна выдават�
                 while (wwpol2 != 0):
                     simplepol2 = wwpol2 % 10 ** n
                     if simplepol1 == simplepol2:
-                        eq = eq + 1  # eq означает, количество одинаковых мономов, то есть то, что можно сократить. в дальнейшем, смотрю на eq - сколько сокращено. и len = lenmax - eq
+                        eq = eq + 1
                         needpol = needpol * 10 ** (n + 1) + 0 * 10 ** n + simplepol1
                         was = 1
                         polwas[cct] = 1
@@ -129,7 +128,7 @@ def funcfor5(z, mod, temp): # эта функция должна выдават�
             hlen = znlen[hnum]
             if (temp == 0):
                 print("hpol = ", hpol, " pol1 = ", pol1, " pol2 = ", pol2)
-            wwpol1 = hpol                     ###########################pol1 * 10 ** (hlen * n) + hpol
+            wwpol1 = hpol               
             eq = 0
             polwas = []
             for ppolss in range (0, max(len1, len2)):
@@ -143,7 +142,7 @@ def funcfor5(z, mod, temp): # эта функция должна выдават�
                 while (wwpol2 != 0):
                     simplepol2 = wwpol2 % 10 ** n
                     if simplepol1 == simplepol2:
-                        eq = eq + 1  # eq означает, количество одинаковых мономов, то есть то, что можно сократить. в дальнейшем, смотрю на eq - сколько сокращено. и len = lenmax - eq
+                        eq = eq + 1  # eq означает, количество одинаковых мономов, то есть то, что можно сократить. в дальнейшем, смотрим на eq - сколько сокращено. и len = lenmax - eq
                         needpol = needpol * 10 ** (n + 1) + 2 * 10 ** n + simplepol1
                         was = 1
                         polwas[cct] = 1
@@ -189,7 +188,6 @@ def funcfor5(z, mod, temp): # эта функция должна выдават�
                 bnz1 = bnz1 // 10
             pol1 = znpol[dz1]
             len1 = znlen[dz1]
-#            print("dz1 = ", dz1 ,", pol1 = ", pol1)
             bnz2 = nz2
             dz2 = 0
             rk = 0
@@ -202,8 +200,7 @@ def funcfor5(z, mod, temp): # эта функция должна выдават�
             hnum = dz1 ^ dz2 # функция h = f(0, x1 .. xn) + f(1, x1 .. xn) в представлении 2 и 3 - xh + g = f и !xh + g = f
             hpol = znpol[hnum]
             hlen = znlen[hnum]
-            wwpol1 = hpol                     ###########################pol1 * 10 ** (hlen * n) + hpol
-    #        print("wwpol1 = ", wwpol1, " hpol = ", hpol, " hlen = ", hlen, " pol1 = ", pol1, " len1 = ", len1, " dz1 = ", dz1, "dz2 = ", dz2, " hnum = ", hnum)
+            wwpol1 = hpol                    
             eq = 0
             polwas = []
             for ppolss in range (0, max(len1, len2)):
@@ -217,7 +214,7 @@ def funcfor5(z, mod, temp): # эта функция должна выдават�
                 while (wwpol2 != 0):
                     simplepol2 = wwpol2 % 10 ** n
                     if simplepol1 == simplepol2:
-                        eq = eq + 1  # eq означает, количество одинаковых мономов, то есть то, что можно сократить. в дальнейшем, смотрю на eq - сколько сокращено. и len = lenmax - eq
+                        eq = eq + 1  # eq означает, количество одинаковых мономов, то есть то, что можно сократить. в дальнейшем, смотрим на eq - сколько сокращено. и len = lenmax - eq
                         needpol = needpol * 10 ** (n + 1) + 1 * 10 ** n + simplepol1
                         was = 1
                         polwas[cct] = 1
@@ -270,7 +267,7 @@ def funcfor6(newpol1, newpol2, mod, temp):
         while (wwpol223 != 0):
             simplepol223 = wwpol223 % 10 ** (n + 1)
             if simplepol123 == simplepol223:
-                eq = eq + 1  # eq означает, количество одинаковых мономов, то есть то, что можно сократить. в дальнейшем, смотрю на eq - сколько сокращено. и len = lenmax - eq
+                eq = eq + 1  # eq означает, количество одинаковых мономов, то есть то, что можно сократить. в дальнейшем, смотрим на eq - сколько сокращено. и len = lenmax - eq
                 allpol = allpol * 10 ** (n + 2) + simplepol123
                 was = 1
                 polwas[cct] = 1
@@ -326,7 +323,7 @@ def funcfor7(newpol1, newpol2, mod, temp):
         while (wwpol223 != 0):
             simplepol223 = wwpol223 % 10 ** (newn - 1)
             if simplepol123 == simplepol223:
-                eq = eq + 1  # eq означает, количество одинаковых мономов, то есть то, что можно сократить. в дальнейшем, смотрю на eq - сколько сокращено. и len = lenmax - eq
+                eq = eq + 1 
                 allpol = allpol * 10 ** newn + simplepol123
                 was = 1
                 polwas[cct] = 1
@@ -382,7 +379,7 @@ def funcfor8(newpol1, newpol2, mod, temp):
         while (wwpol223 != 0):
             simplepol223 = wwpol223 % 10 ** (newn - 1)
             if simplepol123 == simplepol223:
-                eq = eq + 1  # eq означает, количество одинаковых мономов, то есть то, что можно сократить. в дальнейшем, смотрю на eq - сколько сокращено. и len = lenmax - eq
+                eq = eq + 1
                 allpol = allpol * 10 ** newn + simplepol123
                 was = 1
                 polwas[cct] = 1
@@ -445,23 +442,21 @@ def fncpol6(z, mod, temp):
                 newz = newz % 10 ** (2 ** newn - scht * bm)
                 scht = scht + 1
                 nz2 = nz2 * 10 ** (2 ** (newn - am)) + newz // 10 ** (2 ** newn - scht * bm)
-                newz = newz % 10 ** (2 ** newn - scht * bm)   # checkout but vrode true
+                newz = newz % 10 ** (2 ** newn - scht * bm)
                 scht = scht + 1
             bnz1 = nz1
             bnz2 = nz2
             for ai in range (0, 3):
                 for aj in range (1, 6):
-                  #  print(funcfor5(bnz1, ai, aj))
                     newpol1 = funcfor5(bnz1, ai, aj)
                     if temp == 0:
                         print(" 6 newpol1 = ", newpol1, " ai = ", ai, " aj = ", aj)
                     for ak in range (0, 3):
                         for az in range (1, 6):
-                        #    print(funcfor5(bnz2, ak, az))
                             newpol2 = funcfor5(bnz2, ak, az)
                             if temp == 0:
                                 print(" 6 newpol2 = ", newpol2, " ak = ", ak, " az = ", az)
-                            allpol = funcfor6(newpol1, newpol2, 0, 0) # ПОДУМАТЬ, можно ли сократить время работы
+                            allpol = funcfor6(newpol1, newpol2, 0, 0)
                             if temp == 0:
                                 print(" 6 allpol = ", allpol, " ai = ", ai, " aj = ", aj, " ak = ", ak, " az = ", az)
                             lenn = 0
@@ -613,7 +608,8 @@ def fncpol8(z, mod, temp):
 
 
 while (True):
-    n = int(input())
+#    n = int(input())
+    n = 4
     if 1 == 1:
         b = []
         sch1 = sch2 = sch3 = sch4 = sch5 = sch6 = 0
@@ -725,8 +721,6 @@ while (True):
                         situation5 = 0
                         situation6 = 0
                         prm = zn2 % 10000
-    #                    if zn2 == 3121 and zn1 == 211:
-     #                       print("prm = ", prm, " and zn1 = ", zn1)
                         while prm != 0 or zn1 != 0:
                             if prm == 3:
                                 good = 7
@@ -864,7 +858,7 @@ while (True):
                 last = 0
                 
         print("next work")
-        print(funcfor5(10100011101001000101001101010001, 0, 1)) #23412
+        print(funcfor5(10100011101001000101001101010001, 0, 1))
         print(funcfor5(10100011101001000101001101010001, 0, 2))
         print(funcfor5(10100011101001000101001101010001, 0, 3))
         print(funcfor5(10100011101001000101001101010001, 0, 4))
@@ -879,9 +873,8 @@ while (True):
         print(funcfor5(10100011101001000101001101010001, 2, 3))
         print(funcfor5(10100011101001000101001101010001, 2, 4))
         print(funcfor5(10100011101001000101001101010001, 2, 5)) 
-    while(True):
         print("next n = 6")
-        inpcnt = 10000
+        inpcnt = 1
         newn = 6
         itoglennew6 = []
         for iteritog in range (0, 2 ** (n + 2)):
@@ -937,7 +930,7 @@ while (True):
         print("next n = 7")
         newn = 7
         itoglen = 0
-        inpcnt = 1000
+        inpcnt = 1
         itoglennew7 = []
         for iteritog in range (0, 2 ** (n + 3)):
             itoglennew7.append(0)
@@ -996,9 +989,9 @@ while (True):
 
 
 # далее от 8 переменных
-    if 2 == 1: # пока закрыто, дальше заменить на равенство и открыть
+    if 1 == 1:
         print("next n = 8")
-        inpcnt = 100
+        inpcnt = 200
         itoglennew8 = []
         newn = 8
         for iteritog in range (0, 2 ** (n + 4)):
@@ -1031,62 +1024,13 @@ while (True):
                 if itoglen < bufitoglennew:
                     bufitoglennew = itoglen
                     bufpol = allpol
-            if rancnt % 5 == 0:
+            if rancnt % 10 == 0:
                 print("8 bufpol = ", bufpol) # полином минимальной длины для данной функции
                 print("8 bufitoglennew = ", bufitoglennew)
             itoglennew8[bufitoglennew] = itoglennew8[bufitoglennew] + 1
-            if rancnt == 9:
-                print("now 9: ")
-                for iteritog in range (0, 2 ** (n + 2)):
-                    print("iter = ", iteritog, " = ", itoglennew8[iteritog])
-            if rancnt == 19:
-                print("now 19: ")
-                for iteritog in range (0, 2 ** (n + 2)):
-                    print("iter = ", iteritog, " = ", itoglennew8[iteritog])
-            if rancnt == 24:
-                print("now 24: ")
+            if rancnt % 25 == 0:
+                print("now rancnt: ", rancnt)
                 for iteritog in range (0, 2 ** (n + 2)):
                     print("iter = ", iteritog, " = ", itoglennew8[iteritog])
         for iteritog in range (0, 2 ** (n + 2)):
             print("iter = ", iteritog, " = ", itoglennew8[iteritog])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                
